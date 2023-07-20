@@ -13,6 +13,8 @@ const saltRounds=10;
 const multer=require('multer');
 const upload=require('../helpers/upload');
 
+
+//for register
 exports.addUser = async (req, res, next) => {
     console.log(req.body);
     try {
@@ -61,6 +63,8 @@ exports.addUser = async (req, res, next) => {
     }
 }
 
+//for login user
+
 exports.loginUser = async (req, res, next) => {
     try {
         const User = await user.findOne({ where: { Email: req.body.Email } });
@@ -94,6 +98,8 @@ exports.loginUser = async (req, res, next) => {
 };
 
 
+//for view user
+
 exports.viewuser = async (req, res, next) => {
     const Email = req.user.Email
     console.log(Email);
@@ -112,6 +118,9 @@ exports.viewuser = async (req, res, next) => {
                 res.send(User);
             }
         };
+
+
+        //for update user
     
         exports.updateProfile = async (req, res, next) => {
             try {
@@ -159,6 +168,8 @@ exports.viewuser = async (req, res, next) => {
             }
         
         };
+
+        //for reset password
 
         exports.resetPassword = async (req, res, next) => {
         
