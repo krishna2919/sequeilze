@@ -15,5 +15,5 @@ router.get('/view', passport.authenticate('jwt', { session: false }), addUser.vi
 router.post('/updateprofile/:id',passport.authenticate('jwt', { session: false }), upload.single('Image'), addUser.updateProfile);
 
 router.put('/reset',passport.authenticate('jwt', { session: false }),addUser.resetPassword);
-
+router.get('/logout',passport.authenticate('jwt',{session:false}),addUser.logout);
 module.exports = router;

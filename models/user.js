@@ -24,7 +24,6 @@ module.exports = (sequelize, Sequelize) => {
 
         Email: {
             type: Sequelize.STRING,
-            //defaultValue: 'usermodule@gmail.com',
             allowNull: false,
             unique: {
                 msg: 'This email is already taken.'

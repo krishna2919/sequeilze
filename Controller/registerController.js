@@ -15,7 +15,7 @@ const upload=require('../helpers/upload');
 
 
 //for register
-exports.addUser = async (req, res, next) => {
+module.exports.addUser = async (req, res, next) => {
     console.log(req.body);
     try {
         const findUser = await user.findOne({ where: { Email: req.body.Email } });
@@ -65,7 +65,7 @@ exports.addUser = async (req, res, next) => {
 
 //for login user
 
-exports.loginUser = async (req, res, next) => {
+module.exports.loginUser = async (req, res, next) => {
     try {
         const User = await user.findOne({ where: { Email: req.body.Email } });
         if (User == null) {
@@ -100,7 +100,7 @@ exports.loginUser = async (req, res, next) => {
 
 //for view user
 
-exports.viewuser = async (req, res, next) => {
+module.exports.viewuser = async (req, res, next) => {
     const Email = req.user.Email
     console.log(Email);
         const User = await user.findOne({ where: { Email:Email} });
@@ -122,7 +122,7 @@ exports.viewuser = async (req, res, next) => {
 
         //for update user
     
-        exports.updateProfile = async (req, res, next) => {
+        module.exports.updateProfile = async (req, res, next) => {
             try {
         
                 const Email = req.user.Email
@@ -171,7 +171,7 @@ exports.viewuser = async (req, res, next) => {
 
         //for reset password
 
-        exports.resetPassword = async (req, res, next) => {
+       module.exports.resetPassword = async (req, res, next) => {
         
             const Email=req.user.Email;
             console.log(Email);
@@ -221,3 +221,6 @@ exports.viewuser = async (req, res, next) => {
         
             }
         };
+
+
+    

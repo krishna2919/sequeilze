@@ -11,7 +11,7 @@ const addressBook = db.address;
 //add addressbook
 
 module.exports.addAddressBook = async (req, res, next) => {
-  
+
     const add_address=await addressBook.bulkCreate(req.body);
    
     if(add_address)
