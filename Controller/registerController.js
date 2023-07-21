@@ -12,6 +12,7 @@ const bcrypt = require("bcrypt");
 const saltRounds=10;
 const multer=require('multer');
 const upload=require('../helpers/upload');
+const { authenticate } = require("passport");
 
 
 //for register
@@ -120,9 +121,9 @@ module.exports.viewuser = async (req, res, next) => {
         };
 
 
-        //for update user
+ //for update user
     
-        module.exports.updateProfile = async (req, res, next) => {
+module.exports.updateProfile = async (req, res, next) => {
             try {
         
                 const Email = req.user.Email
@@ -169,9 +170,9 @@ module.exports.viewuser = async (req, res, next) => {
         
         };
 
-        //for reset password
+  //for reset password
 
-       module.exports.resetPassword = async (req, res, next) => {
+module.exports.resetPassword = async (req, res, next) => {
         
             const Email=req.user.Email;
             console.log(Email);
