@@ -10,9 +10,9 @@ const addressBook = db.address;
 module.exports = {
     //for add addressbook
     addAddressBook: async (req, res, next) => {
-        const add_address = await addressBook.bulkCreate(req.body);
+        const addAddress = await addressBook.bulkCreate(req.body);
 
-        if (add_address) {
+        if (addAddress) {
             next(
                 new GeneralResponse(
                     " Address Added....",
