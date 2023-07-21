@@ -19,7 +19,7 @@ require('./helpers/Passport')(passport);
 app.use(cors());
 app.use(helmet());
 
-app.use(session({ secret: 'melody hensley is my spirit animal' }));
+//app.use(session({ secret: 'melody hensley is my spirit animal' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
