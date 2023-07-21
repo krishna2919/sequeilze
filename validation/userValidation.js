@@ -84,7 +84,7 @@ module.exports = {
             "string.max": "password should be of maximum 16 characters",
             "any.required": `password is a required field`,
         }),
-        confirmPassword: Joi.string().required().valid(Joi.ref('Password')).messages({
+        confirmPassword: Joi.string().required().valid(Joi.ref('newpassword')).messages({
             "string.base": `confirm password should be a type of 'text'`,
             "any.only": "confirm password doesn't match password",
             "any.required": `confirm password is a required field`,
