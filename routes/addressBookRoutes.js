@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express();
 const passport = require('passport');
-const addressBookController = require('../Controller/addressBookController');
+const { addAddressBook, viewAddressBook, updateAddressBook, deleteAddressBook } = require('../Controller/addressBookController');
 const Validate = require('../validation/addressBookValidation');
+const { validator } = require('../helpers/validator');
 
 
 
-router.post("/addAddressBook",passport.authenticate('jwt',{session:false}) ,addressBookController.addAddressBook);
 
-router.get("/viewAddressBook", passport.authenticate('jwt', { session: false }), addressBookController.viewAddressBook);
+router.post("/addAddressBook",passport.authenticate('jwt',{session:false}) ,validator.body(Validate.AddressBook),addAddressBook);
 
-router.put("/updateAddressBook/:id", passport.authenticate('jwt', { session: false }), addressBookController.updateAddressBook);
+router.get("/viewAddressBook", passport.authenticate('jwt', { session: false }), viewAddressBook);
 
-router.delete("/deleteAddressBook/:id", passport.authenticate('jwt', { session: false }), addressBookController.deleteAddressBook);
+router.put("/updateAddressBook/:id", passport.authenticate('jwt', { session: false }),validator.body(Validate.updateAddressBook), updateAddressBook);
+
+router.delete("/deleteAddressBook/:id", passport.authenticate('jwt', { session: false }), deleteAddressBook);
 
 
 module.exports=router;

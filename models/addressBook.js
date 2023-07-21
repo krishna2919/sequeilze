@@ -15,6 +15,7 @@ module.exports = (sequelize, Sequelize) => {
 
         addressLine1: {
             type: Sequelize.STRING,
+            allowNull: false,
             validate: {
                 len: {
                     args: [2,50],
@@ -26,6 +27,7 @@ module.exports = (sequelize, Sequelize) => {
 
         addressLine2: {
             type: Sequelize.STRING,
+            allowNull: false,
             validate: {
                 len: {
                     args: [2,50],
@@ -36,20 +38,24 @@ module.exports = (sequelize, Sequelize) => {
 
         Country: {
             type: Sequelize.STRING,
+            allowNull: false,
             enum: ['India', 'Australia', 'Canada', 'Japan']
         },
 
         State: {
             type: Sequelize.STRING,
+            allowNull: false,
             enum: ['Gujarat', 'Rajasthan', 'Punjab', 'Assam']
         },
 
         City: {
             type: Sequelize.STRING,
+            allowNull: false,
             enum: ['Ahmedabad', 'Junagadh', 'Surat', 'Bhuj']
 
         },
         PinCode: {
+            allowNull: false,
             type: Sequelize.INTEGER
         }
 

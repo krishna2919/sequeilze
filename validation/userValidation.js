@@ -72,19 +72,19 @@ module.exports = {
         }),
     }),
     resetPassword: Joi.object({
-        CurrentPassword: Joi.string().empty().required().messages({
+        oldpassword: Joi.string().empty().required().messages({
             "string.base": ` currentPassword should be a type of 'text'`,
             "string.empty": ` currentPassword cannot be an empty field`,
             "any.required": ` currentPassword is a required field`,
         }),
-        Password: Joi.string().required().empty().min(6).max(16).messages({
+        newpassword: Joi.string().required().empty().min(6).max(16).messages({
             "string.base": `password should be a type of 'text'`,
             "string.empty": `password cannot be an empty field`,
             "string.min": "password should be of minimum 6 characters",
             "string.max": "password should be of maximum 16 characters",
             "any.required": `password is a required field`,
         }),
-        ConfirmPassword: Joi.string().required().valid(Joi.ref('Password')).messages({
+        confirmPassword: Joi.string().required().valid(Joi.ref('Password')).messages({
             "string.base": `confirm password should be a type of 'text'`,
             "any.only": "confirm password doesn't match password",
             "any.required": `confirm password is a required field`,
