@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             validate: {
                 len: {
-                    args: [2,50],
+                    args: [2, 50],
                     msg: 'Your title may be 2 to 50 characters only.'
                 }
             }
@@ -18,7 +18,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             validate: {
                 len: {
-                    args: [2,50],
+                    args: [2, 50],
                     msg: 'Your title may be 2 to 50 characters only.'
                 }
             }
@@ -30,7 +30,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             validate: {
                 len: {
-                    args: [2,50],
+                    args: [2, 50],
                     msg: 'Your title may be 2 to 50 characters only.'
                 }
             }

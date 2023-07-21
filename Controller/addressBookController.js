@@ -9,11 +9,10 @@ const addressBook = db.address;
 
 module.exports = {
     //for add addressbook
-    addAddressBook : async (req, res, next) => {
-        const add_address= await addressBook.bulkCreate(req.body);
-       
-        if(add_address)
-        {
+    addAddressBook: async (req, res, next) => {
+        const add_address = await addressBook.bulkCreate(req.body);
+
+        if (add_address) {
             next(
                 new GeneralResponse(
                     " Address Added....",
@@ -22,8 +21,7 @@ module.exports = {
                 )
             );
         }
-        else
-        {
+        else {
             next(
                 new GeneralError(
                     "Not Successfully added Address Data....",
@@ -34,15 +32,15 @@ module.exports = {
         }
     },
 
-//for view addressbook
+    //for view addressbook
 
-    viewAddressBook : async (req, res, next) => {
+    viewAddressBook: async (req, res, next) => {
         try {
             const data = await addressBook.findAll();
             if (data) {
                 res.send(data);
             } else {
-    
+
                 await next(
                     new GeneralError(
                         "addressBookData is Not Showing...",
@@ -50,18 +48,18 @@ module.exports = {
                         config.HTTP_ACCEPTED
                     )
                 );
-    
+
             }
-    
+
         } catch (err) {
             logger.error("err", err)
         }
     },
 
 
-// for update addressbook
+    // for update addressbook
 
-    updateAddressBook : async (req, res, next) => {
+    updateAddressBook: async (req, res, next) => {
         try {
             const id = req.params.id
             const data = {
@@ -93,24 +91,24 @@ module.exports = {
                     )
                 );
             }
-    
+
         } catch (err) {
             logger.error("err", err)
         }
     },
 
 
-//for delete addressbook
+    //for delete addressbook
 
-    deleteAddressBook : async (req, res, next) => {
+    deleteAddressBook: async (req, res, next) => {
         try {
-    
+
             const id = req.params.id
-    
+
             const deleteAddressBookData = await addressBook.destroy({
                 where: { id: id }
             });
-    
+
             if (deleteAddressBookData) {
                 await next(
                     new GeneralResponse(
@@ -128,7 +126,7 @@ module.exports = {
                     )
                 );
             }
-    
+
         } catch (err) {
             logger.error("err", err);
         }

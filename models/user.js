@@ -2,12 +2,12 @@ const sequelize = require("sequelize");
 
 module.exports = (sequelize, Sequelize) => {
     return sequelize.define("user_detail", {
-        Name:{
+        Name: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 len: {
-                    args: [2,50],
+                    args: [2, 50],
                     msg: 'Your full name may be 2 to 50 characters only.'
                 }
             }
@@ -36,7 +36,7 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         Password: {
-            type:Sequelize.STRING,
+            type: Sequelize.STRING,
             validate: {
                 len: {
                     args: [5, 72],
