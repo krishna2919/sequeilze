@@ -90,7 +90,7 @@ module.exports.updateAddressBook = async (req, res, next) => {
         } else {
             await next(
                 new GeneralError(
-                    "AddressBook Is Not Updated....",
+                    "AddressBook is Not Updated....",
                     undefined,
                     config.HTTP_ACCEPTED
                 )
