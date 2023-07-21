@@ -19,12 +19,12 @@ require('./helpers/Passport')(passport);
 app.use(cors());
 app.use(helmet());
 
-app.use(session({ secret: 'kisu' }));
+app.use(session({ secret: 'melody hensley is my spirit animal' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 
-const port = 8000;
+const port = 8080;
 
 app.use(require("./helpers/response"));
 app.use(require("./helpers/error").handleJoiErrors);

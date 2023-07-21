@@ -20,6 +20,7 @@ db.Sequelize = Sequelize;
 db.sequelize = data;
 
 db.user = require('../models/user')(data, Sequelize);
+db.address = require('../models/addressBook')(data, Sequelize);
 
 db.sequelize.sync()
     .then(() => {
