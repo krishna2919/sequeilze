@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const data = new Sequelize('b5eaibq5aqmkgplyf7yq', 'u7d3cgjlu9soc5te', 'pSPh1I4PZyp5Nk1BGICL', {
     host: 'b5eaibq5aqmkgplyf7yq-mysql.services.clever-cloud.com',
     dialect: 'mysql',
-    port: 3306, // Make sure to specify the port
+    port: 3306,
     dialectOptions: {
         // Additional options specific to the MySQL dialect
     },
